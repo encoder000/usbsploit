@@ -118,7 +118,7 @@ else
 fi
 
 # DISABLE ALL USB Profiles!
-find $PROFILE_BASEPATH  -name UDC -type f -exec sh -c 'echo "" >  "$@"' _ {} \;
+find $PROFILE_BASEPATH  -name UDC -type f -exec sh -c 'echo "" >  "$@"' _ {{}} \;
 
 # enable functions
 # Device can have many configurations, like c.1, a.1, etc., but host chose from it
