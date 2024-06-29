@@ -118,7 +118,7 @@ else
 fi
 
 # DISABLE ALL USB Profiles!
-find $PROFILE_BASEPATH  -name UDC -type f -exec sh -c 'echo "" >  "$@"' _ {} \;
+find $PROFILE_BASEPATH  -name UDC -type f -exec sh -c 'echo "" >  "$@"' _ {{}} \;
 
 # enable functions
 # Device can have many configurations, like c.1, a.1, etc., but host chose from it
@@ -127,7 +127,7 @@ mkdir -p "${PROFILE_PATH}/configs/${PROFILE_CONFIG_NAME}/strings/0x409"
 cd "$PROFILE_PATH/configs/${PROFILE_CONFIG_NAME}/"
 if [ $? -eq 0 ]; then
     echo $PROFILE_CONFIGURATION_STR > strings/0x409/configuration
-    find $PROFILE_PATH/functions/* -type d -maxdepth 0 -exec sh -c 'ln -s $@ ./' _ {} \;
+    find $PROFILE_PATH/functions/* -type d -maxdepth 0 -exec sh -c 'ln -s $@ ./' _ {{}} \;
 else
     echo "functions enable fail"
     exit 1
