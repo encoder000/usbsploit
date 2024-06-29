@@ -8,6 +8,7 @@
 
 * Author(s): Scott Shawcroft, Dan Halbert
 """
+import usb_hid
 from .send_report import send_report_keyboard as send_report
 from .keycode import Keycode
 
