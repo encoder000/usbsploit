@@ -5,6 +5,7 @@ import os
 import importlib
 import importlib.util
 
+print(open('banners/main-banner.txt').read())
 kbd = Keyboard(0)
 layout = KeyboardLayoutUS(kbd)
 path = ['.']
