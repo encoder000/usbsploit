@@ -154,5 +154,5 @@ find ${{PROFILE_PATH}}/strings/ -type d -delete
 # Remove profile
 rmdir "$PROFILE_PATH"'''
 
-open('activity/start.sh').write(activity_startup)
-open('activity/stop.sh').write(activity_stop)
+open('activity/start.sh','w').write(activity_startup)
+open('activity/stop.sh' ,'w').write(activity_stop)
