@@ -8,10 +8,7 @@
 
 * Author(s): Scott Shawcroft, Dan Halbert
 """
-
-from micropython import const
-import usb_hid
-from .send_report import send_report
+from .send_report import send_report_keyboard as send_report
 from .keycode import Keycode
 
 from . import find_device
@@ -21,7 +18,7 @@ try:
 except:  # pylint: disable=bare-except
     pass
 
-_MAX_KEYPRESSES = const(6)
+_MAX_KEYPRESSES = 6
 
 
 class Keyboard:

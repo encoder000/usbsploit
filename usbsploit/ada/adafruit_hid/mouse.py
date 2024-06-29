@@ -9,7 +9,7 @@
 * Author(s): Dan Halbert
 """
 from . import find_device
-from .send_report import send_report
+from .send_report import send_report_mouse as send_report
 
 try:
     from typing import Sequence
