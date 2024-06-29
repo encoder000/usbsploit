@@ -12,7 +12,7 @@ activity_startup = f'''
 # add_profile.sh
 
 PROFILE_NAME="{usb_device_name}"
-PROFILE_BASEPATH="{configfs_path}"
+PROFILE_BASEPATH="{configfs_path}/usb_gadget/"
 PROFILE_PATH="${{PROFILE_BASEPATH}}${{PROFILE_NAME}}"
 PROFILE_CONFIG_NAME="b.1"
 
@@ -117,21 +117,6 @@ else
     exit 1
 fi
 
-# DISABLE ALL USB Profiles!
-find $PROFILE_BASEPATH  -name UDC -type f -exec sh -c 'echo "" >  "$@"' _ {} \;
-
-# enable functions
-# Device can have many configurations, like c.1, a.1, etc., but host chose from it
-# Usually, device have only one config
-mkdir -p "${{PROFILE_PATH}}/configs/${{PROFILE_CONFIG_NAME}}/strings/0x409"
-cd "$PROFILE_PATH/configs/${{PROFILE_CONFIG_NAME}}/"
-if [ $? -eq 0 ]; then
-    echo $PROFILE_CONFIGURATION_STR > strings/0x409/configuration
-    find $PROFILE_PATH/functions/* -type d -maxdepth 0 -exec sh -c 'ln -s $@ ./' _ {} \;
-else
-    echo "functions enable fail"
-    exit 1
-fi
 
 cd $PROFILE_PATH
 ls /sys/class/udc > UDC
@@ -143,7 +128,7 @@ activity_stop = f'''#!/system/bin/sh
 
 
 PROFILE_NAME="{usb_device_name}"
-PROFILE_BASEPATH="{configfs_path}"
+PROFILE_BASEPATH="{configfs_path}/usb_gadget/"
 PROFILE_PATH="${{PROFILE_BASEPATH}}${{PROFILE_NAME}}"
 
 if [ -z "$PROFILE_NAME" ]; then
