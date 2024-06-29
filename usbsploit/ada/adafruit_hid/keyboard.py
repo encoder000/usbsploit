@@ -8,7 +8,7 @@
 
 * Author(s): Scott Shawcroft, Dan Halbert
 """
-import usb_hid
+
 from .send_report import send_report_keyboard as send_report
 from .keycode import Keycode
 
@@ -36,7 +36,7 @@ class Keyboard:
 
     # No more than _MAX_KEYPRESSES regular keys may be pressed at once.
 
-    def __init__(self, devices: Sequence[usb_hid.Device], timeout: int = None) -> None:
+    def __init__(self, devices, timeout: int = None) -> None:
         """Create a Keyboard object that will send keyboard HID reports.
 
         :param timeout: Time in seconds to wait for USB to become ready before timing out.
