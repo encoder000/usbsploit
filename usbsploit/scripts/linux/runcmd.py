@@ -1,5 +1,5 @@
-from .cmd import run as runc
-from .charmapcodes import run as utfwrite
+from scripts.linux.cmd import run as runc
+from scripts.linux.charmapcodes import run as utfwrite
 
 from ada.keycode import Keycode
 from ada.keyboard import Keyboard

@@ -1,5 +1,5 @@
-from .cmd import run as runc
-from .charmapcodes import run as asciiwrite
+from scripts.windows.cmd import run as runc
+from scripts.windows.charmapcodes import run as asciiwrite
 
 from ada.keycode import Keycode
 from ada.keyboard import Keyboard
@@ -19,7 +19,7 @@ def run(args):
 	layout = KeyboardLayoutUS(kbd)
 
 	runc([]) #runs cmd
-	asciiwrite(' '.join(args))
+	asciiwrite(args)
 	kbd.press(Keycode.ENTER)
 	kbd.release_all()
 

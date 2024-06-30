@@ -2,7 +2,7 @@ from ada.keycode import Keycode
 from ada.keyboard import Keyboard
 from ada.keyboard_layout_us import KeyboardLayoutUS
 
-from .charmapcodes import run as asciiwrite
+from scripts.windows.charmapcodes import run as asciiwrite
 
 def run(args):
 	kbd = Keyboard()

@@ -21,7 +21,6 @@ def run(args):
 	print('Using windows ascii-charmapcodes:',args)
 	for i in str_:
 		kbd.press(Keycode.ALT)
-		for j in ord(i):
-			kbd.press(better_keycode.get(j))
+		layout.write(str(ord(i)))
 		kbd.release_all()
-		time.sleep(0.2)
+		time.sleep(0.1)
