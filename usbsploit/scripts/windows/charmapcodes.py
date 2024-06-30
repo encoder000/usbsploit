@@ -20,6 +20,6 @@ def run(args):
 	str_ = ' '.join(args)
 	print('Using windows ascii-charmapcodes:',args)
 	for i in str_:
-		kbd.press(Keycode.ALT,*[ better_keycode.get(j)  for i in str(ord(i))  ]
+		kbd.press(Keycode.ALT,*[ better_keycode.get(j)  for j in str(ord(i))  ])
 		kbd.release_all()
 		time.sleep(0.1)
