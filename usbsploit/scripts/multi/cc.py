@@ -1,24 +1,24 @@
 from ada.keycode import Keycode
 from ada.keyboard import Keyboard
+from ada import better_keycode
+def help():
+	print('''
+This script helps you to press any buttons
 
+Example:
+run cc.py windows space #changes layout of computer
+
+''')
 
 def run(args):
+	print('Using cc.py:',args)
 	kbd = Keyboard()
-	if comb[0] == 'help':
-		print ('''
-help  - help
-exit  - exit
-e     - run
-Example:
-run SPACE ONE
-''')
-	elif comb[0] == 'e':
-		data = comb[1:]
-		if data:
-			print (data)
-			try:
-				for i in data:
-					print ('RUNNING',i)
-					kbd.press(vars(Keycode)[i])
-				kbd.release_all()
-			except Exception as e:print(e)
+	data = comb[1:]
+	if data:
+		print (data)
+		try:
+			for i in data:
+				print ('RUNNING',i)
+				kbd.press(better_keycode.get(i))
+			kbd.release_all()
+		except Exception as e:print(e)
