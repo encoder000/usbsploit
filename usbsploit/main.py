@@ -12,12 +12,25 @@ while True:
 	try:
 		if cmd:
 			if cmd[0] == 'help':
-				print ('''
+				if len(cmd==1):
+					print ('''
 help - help
 ls   - list scripts:D
 run  - run script
 cd   - change dir
+
+Examples:
+help linux/cmd.py
+run  linux/cmd.py
 ''')
+				else:
+					runpath = (os.path.join(*path,cmd[1]))
+					spec = importlib.util.spec_from_file_location(
+					"module.name", runpath)
+					foo = importlib.util.module_from_spec(spec)
+					spec.loader.exec_module(foo)
+					foo.help()
+
 			elif cmd[0] == 'ls':
 				print (' '.join(os.listdir(os.path.join(*path))))
 

@@ -5,6 +5,8 @@ from ada.keycode import Keycode
 from ada.keyboard import Keyboard
 from ada.keyboard_layout_us import KeyboardLayoutUS
 
+import time
+
 def help():
 	print('''
 Runs windows terminal and enters your command.

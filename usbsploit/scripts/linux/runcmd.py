@@ -5,6 +5,8 @@ from ada.keycode import Keycode
 from ada.keyboard import Keyboard
 from ada.keyboard_layout_us import KeyboardLayoutUS
 
+import time
+
 def help():
 	print('''
 Runs linux terminal and enters your command.
@@ -14,13 +16,13 @@ def run(args):
 	kbd = Keyboard()
 
 	runc([])
-	time.sleep(0.5)
+	time.sleep(1)
 
-	utfwrite(' '.join(args))
+	utfwrite(args)
 	kbd.press(Keycode.ENTER)
 	kbd.release_all()
 
 
 	#layout.write('exit')
-	#kbd.press(Keycode.ENTER)
-	#kbd.release_all()
+	kbd.press(Keycode.ENTER)
+	kbd.release_all()

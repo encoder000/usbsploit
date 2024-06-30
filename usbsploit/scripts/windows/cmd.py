@@ -11,7 +11,7 @@ def run(args):
 	kbd.release_all()
 
 	for i in range(30):
-        	kbd.press(Keycode.BACKSPACE)#remove shit from the bar
+		kbd.press(Keycode.BACKSPACE)#remove shit from the bar
 
 	kbd.release_all()
 
