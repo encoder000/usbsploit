@@ -13,8 +13,6 @@ All scripts, which run framework functions are python modules with "run" functio
 
 run module_name abcd efg -> module_name.run(["abcd","efg"]) 
 
-**The sending class of keyboard and layout will be removed in next versions!!!**
-
 ,  
 ## About using
 
