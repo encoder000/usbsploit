@@ -1,7 +1,7 @@
 import os
 
 print('ConfigFS path:')
-os.system('mount | grep configfs')
+os.system('mount | grep config')
 print()
 
 usb_device_name = input("Usb device name: ")

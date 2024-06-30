@@ -1,14 +1,11 @@
-from ada.adafruit_hid.keyboard import Keyboard
-from ada.adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
-from ada.adafruit_hid.keycode import Keycode
 import os
 import importlib
 import importlib.util
 
 print(open('banners/main-banner.txt').read())
-kbd = Keyboard(0)
-layout = KeyboardLayoutUS(kbd)
-path = ['.']
+#kbd = Keyboard(0)
+#layout = KeyboardLayoutUS(kbd)
+path = ['.','scripts']
 
 while True:
 	cmd = input('/'+os.path.join(*path)+'$ ').split()
@@ -38,6 +35,6 @@ cd   - change dir
 				"module.name", runpath)
 				foo = importlib.util.module_from_spec(spec)
 				spec.loader.exec_module(foo)
-				foo.run(kbd,layout,cmd[2:])
+				foo.run(cmd[2:])
 	except Exception as e:
 		print (f'Exception: {e}')
