@@ -9,9 +9,9 @@ setup.sh should setup and configure all the things from the box (automatically r
 
 create-activity-scripts.py generates activity/start.sh and activity/stop.sh scripts, using configfs path and the name of dir with your usb device configuration!
 
-All scripts, which run framework functions are python modules with "run" function. It recv  keyboard class of **ada** and layout class of this library. Also this function recv list of separated by space strings after command of running module.
+All scripts, which run framework functions are python modules with "run" function. It recv list of separated by space strings after command of running module.
 
-run module_name abcd efg -> module_name.run(kbd,layout,["abcd","efg"]) 
+run module_name abcd efg -> module_name.run(["abcd","efg"]) 
 
 **The sending class of keyboard and layout will be removed in next versions!!!**
 
